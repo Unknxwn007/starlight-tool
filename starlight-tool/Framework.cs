@@ -1,13 +1,10 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using System.ComponentModel;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System.Diagnostics;
-using System.Management.Automation;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 
-namespace Starlight_Tool
+namespace starlight_tool
 {
     public class Framework
     {
@@ -31,7 +28,7 @@ namespace Starlight_Tool
             }
         }
 
-        public static void RunPSCode(string command)
+        public static void RunPSCode(string command, bool noWindow)
         {
             var process = new Process
             {
@@ -41,38 +38,18 @@ namespace Starlight_Tool
                     Arguments = command,
                     RedirectStandardOutput = true,
                     UseShellExecute = false,
-                    CreateNoWindow = false
+                    CreateNoWindow = noWindow
                 }
             };
+
             process.Start();
             process.WaitForExit();
         }
 
-        public static bool IsChocolateyInstalled()
+        public static void CompleteInstallationProcess()
         {
-            return Directory.Exists(@"C:\ProgramData\chocolatey");
-        }
-
-        public static bool DoesPackagesFileExist()
-        {
-            return File.Exists("packages.config");
-        }
-
-        public static void RunChecks()
-        {
-            var installCommand = @"-ExecutionPolicy Bypass -Command ""iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))""";
-
-            //Chocolately 
-            if (!IsChocolateyInstalled())
-            {
-                MessageBox.Show("Chocolately has not been found! Press OK to install", "Requirements have not been met");
-                RunPSCode(installCommand);
-            }
-            //Files
-            if (!DoesPackagesFileExist())
-            {
-                //Download empty packages file
-            }
+            // Remove Onedrive
+            RunPSCode("Get-AppxPackage⁣ Microsoft. OneDrive | Remove-AppxPackage.", true);
         }
     }
 }
