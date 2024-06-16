@@ -30,9 +30,9 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,18 @@
             this.panel1.Size = new System.Drawing.Size(617, 38);
             this.panel1.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Consolas", 12F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(147, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(324, 19);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Developed and maintained by UNKNØWN";
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -77,22 +89,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(159, 51);
             this.button3.TabIndex = 4;
-            this.button3.Text = "EDIT PACKAGES";
+            this.button3.Text = "Install more apps";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Consolas", 12F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(147, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(324, 19);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Developed and maintained by UNKNØWN";
             // 
             // MainWindow
             // 
